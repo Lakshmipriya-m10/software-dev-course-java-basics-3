@@ -10,6 +10,8 @@ public class ConditionalExercisesTests {
         assertTrue(exercises.lessThanFive(4));
         assertFalse(exercises.lessThanFive(5));
         assertFalse(exercises.lessThanFive(6));
+        // Additional exploration: negative number
+        assertTrue(exercises.lessThanFive(-3));
     }
 
     @Test
@@ -18,6 +20,11 @@ public class ConditionalExercisesTests {
         assertEquals("child", exercises.getAgeGroup(12));
         assertEquals("teen", exercises.getAgeGroup(15));
         assertEquals("adult", exercises.getAgeGroup(20));
+
+// Additional exploration: boundary values
+        assertEquals("teen",exercises.getAgeGroup(13));
+        assertEquals("teen",exercises.getAgeGroup(19));
+
     }
 
     @Test
@@ -26,5 +33,8 @@ public class ConditionalExercisesTests {
         assertFalse(exercises.isValidPassword("1234567"));
         assertTrue(exercises.isValidPassword("12345678"));
         assertTrue(exercises.isValidPassword("123456789"));
+        // Additional exploration: boundary values
+        assertFalse(exercises.isValidPassword(""));
+        assertTrue(exercises.isValidPassword("125*65@8"));
     }
 }
